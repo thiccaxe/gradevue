@@ -84,7 +84,9 @@
 								{document._DocumentType}
 							</Badge>
 						</Card>
-						<Button size="sm" color="alternative" outline on:click={async () => await downloadDocument(document._DocumentGU, document._DocumentComment)}><DownloadSolid class="w-4 md:w-6 lg:w-8" title={{title: "download"}}/></Button>
+						<Button title={`Download ${document._DocumentComment}`} size="sm" color="alternative" outline on:click={async () => await downloadDocument(document._DocumentGU, document._DocumentComment)}>
+							<DownloadSolid class="w-4 max-h-4 md:w-6 md:max-h-6 lg:w-8 lg:max-h-8" title={{title: "download"}}/>
+						</Button>
 					</li>
 				{/each}
 			</ol>
@@ -101,7 +103,9 @@
 								<h2 class="text-md">{document._DocumentComment}</h2>
 								<DateBadge date={new Date(document._DocumentDate)} />
 							</Card>
-							<Button color="alternative" outline on:click={async () => await downloadDocument(document._DocumentGU, document._DocumentComment)}><DownloadSolid title={{title: "download"}}/></Button>
+							<Button size="sm" color="alternative" outline on:click={async () => await downloadDocument(document._DocumentGU, document._DocumentComment)}>
+								<DownloadSolid class="w-4 max-h-4 md:w-6 md:max-h-6 lg:w-8 lg:max-h-8" title={{title: "download"}}/>
+							</Button>
 						</li>
 					{/each}
 				</ol>
